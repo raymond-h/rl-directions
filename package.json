@@ -21,5 +21,8 @@
     "mocha": "latest",
     "chai": "latest",
     "onchange": "latest"
+  },
+  "dependencies": {
+    "lodash": "^3.10.0"
   }
 }

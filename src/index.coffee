@@ -38,12 +38,10 @@ exports.asString = (offset) ->
 	dirs.join '-'
 
 exports.normalize = (dir, maxDist = 1) ->
-	{snapToRange} = require './util'
-
 	o = exports.parse dir
 	exports.asString
-		x: (snapToRange -maxDist, o.x, maxDist)
-		y: (snapToRange -maxDist, o.y, maxDist)
+		x: Math.max -maxDist, Math.min o.x, maxDist
+		y: Math.max -maxDist, Math.min o.y, maxDist
 
 exports.getDirection = (p0, p1) ->
 	{x: x0, y: y0} = p0
